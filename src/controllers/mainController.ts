@@ -1,5 +1,5 @@
 import { Response, Request } from 'express'
-
+import { Pet } from '../models/Pet'
 
 export const home = (req:Request, res:Response) => {
     res.render('pages/animal', {
@@ -7,7 +7,8 @@ export const home = (req:Request, res:Response) => {
             title: 'Todos os animais',
             background__path: 'allanimals.jpg'
         },
-        allActive: 'active'
+        allActive: 'active',
+        petData: Pet.getAll()
     })
 }
 
@@ -17,7 +18,8 @@ export const dogs = (req:Request, res:Response) => {
             title: 'Cachorros',
             background__path: 'banner_dog.jpg'
         },
-        dogActive: 'active'
+        dogActive: 'active',
+        petData: Pet.getByAnimal('dog')
     })
 }
 
@@ -27,7 +29,8 @@ export const cats = (req:Request, res:Response) => {
             title: 'Gatos',
             background__path: 'banner_cat.jpg'
         },
-        catActive: 'active'
+        catActive: 'active',
+        petData: Pet.getByAnimal('cat')
     })
 }
 
@@ -37,7 +40,8 @@ export const fishes = (req:Request, res:Response) => {
             title: 'Peixes',
             background__path: 'banner_fish.jpg'
         },
-        fishActive: 'active'
+        fishActive: 'active',
+        petData: Pet.getByAnimal('fish')
         
     })
 }
