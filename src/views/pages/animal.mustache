@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetDevShop</title>
-</head>
-<body>
-    {{ >partials/header }}
-</body>
-</html>
+{{ >partials/header }}
+
+{{ #banner }}
+<section class="banner" style="background-image: url('images/{{ background__path  }}')">{{ title }}</section>
+<h2>{{ title }} disponíveis para adoção</h2>
+{{ /banner }}
+
+
+
+<div class="container list">
+    <div class="item">
+        <img src="images/pastor-alemao.jpg" class="item--image" />
+        <div class="item--name">Pastor-alemão</div>
+        <div class="item--color">Cor: Amarelo e Preto</div>
+        <div class="item--genre">Gênero: Masculino</div>
+    </div>
+</div>
+{{ >partials/footer }}
